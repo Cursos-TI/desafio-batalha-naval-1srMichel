@@ -9,7 +9,7 @@ int main() {
     // Sugestão: Declare uma matriz bidimensional para representar o tabuleiro (Ex: int tabuleiro[5][5];).
     // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
     // Sugestão: Utilize `printf` para exibir as coordenadas de cada parte dos navios.
-    char linha[10] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
+    char coluna[10] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
     int tabuleiro[11][11] = {0};
 
     tabuleiro[3][0] = 3;
@@ -22,7 +22,7 @@ int main() {
 
     printf("    ");
     for(int i = 0; i < 10; i++){
-        printf(" %c", linha[i]);
+        printf(" %c", coluna[i]);
     }
 
     printf("\n");
@@ -36,10 +36,42 @@ int main() {
 
         printf("\n");
     }
+
+    printf("\n");
     // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
     // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
     // Sugestão: Posicione quatro navios no tabuleiro, incluindo dois na diagonal.
     // Sugestão: Exiba o tabuleiro completo no console, mostrando 0 para posições vazias e 3 para posições ocupadas.
+    int tabuleiroAventureiro[10][10] = {0};
+    tabuleiroAventureiro[3][0] = 3;
+    tabuleiroAventureiro[4][0] = 3;
+    tabuleiroAventureiro[5][0] = 3;
+
+    tabuleiroAventureiro[3][6] = 3;
+    tabuleiroAventureiro[3][7] = 3;
+    tabuleiroAventureiro[3][8] = 3;
+
+    tabuleiroAventureiro[7][1] = 3;
+    tabuleiroAventureiro[8][2] = 3;
+    tabuleiroAventureiro[9][3] = 3;
+
+    tabuleiroAventureiro[8][7] = 3;
+    tabuleiroAventureiro[7][8] = 3;
+    tabuleiroAventureiro[6][9] = 3;
+
+    printf("    ");
+    for(int i = 0; i < 10; i++){
+        printf(" %c", coluna[i]);
+    }
+    printf("\n");
+
+    for(int i = 0; i < 10; i++){
+        printf("%d || ", i + 1);
+        for(int j = 0; j < 10; j++){
+            printf("%d ", tabuleiroAventureiro[i][j]);
+        }
+        printf("\n");
+    }
 
     // Nível Mestre - Habilidades Especiais com Matrizes
     // Sugestão: Crie matrizes para representar habilidades especiais como cone, cruz, e octaedro.
