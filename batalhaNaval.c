@@ -72,7 +72,7 @@ int main() {
         }
         printf("\n");
     }
-
+    printf("\n");
     // Nível Mestre - Habilidades Especiais com Matrizes
     // Sugestão: Crie matrizes para representar habilidades especiais como cone, cruz, e octaedro.
     // Sugestão: Utilize estruturas de repetição aninhadas para preencher as áreas afetadas por essas habilidades no tabuleiro.
@@ -93,6 +93,61 @@ int main() {
     // 0 0 1 0 0
     // 1 1 1 1 1
     // 0 0 1 0 0
+    int tabuleiroMestre[10][10] = {0};
 
+    printf("    ");
+    for(int i = 0; i < 10; i++){
+        printf(" %c", coluna[i]);
+    }
+    printf("\n");
+    
+    for(int i = 0; i < 10; i++){
+        
+        for(int j = 0; j < 10; j++){
+            if(i < 3){ 
+                int ponta = 2; 
+                if(j >= ponta - i && j <= ponta + i){ 
+                    tabuleiroMestre[i][j] = 1;
+                }
+            }
+
+            if(i >= 6 && i <= 8){  
+                int ponta = 1; 
+                int centro = 7; 
+               
+                    if(j == ponta){
+                        tabuleiroMestre[i][j] = 1;
+                        if(i == centro){
+                            tabuleiroMestre[i][j - 1] = 1;
+                            tabuleiroMestre[i][j + 1] = 1;
+                        }
+
+                }
+            }
+
+            if(i >= 3 && i <= 7){ 
+                int centro = 5; 
+                if(j == 6){
+                    tabuleiroMestre[i][j] = 1;
+                }
+                if(i == centro){
+                    if(j >= 4 && j <= 8){
+                        tabuleiroMestre[i][j] = 1;
+                    }
+                }
+            }
+        }
+        
+    }
+
+    for(int i = 0; i < 10; i++){
+        printf("%d || ", i + 1);
+        for(int j = 0; j < 10; j++){
+            printf("%d ", tabuleiroMestre[i][j]);
+        }
+
+        printf("\n");
+    }
+    
     return 0;
 }
